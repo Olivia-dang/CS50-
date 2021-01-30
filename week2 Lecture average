@@ -1,21 +1,23 @@
 #include <stdio.h>
 #include <cs50.h>
 float average(int length, int array[]);
+int TOTAL=3;
+
 int main(void)
 {
-    int scores[3];
-    for (int i=0; i<3; i++)
+    int scores[TOTAL];
+    for (int i=0; i<TOTAL; i++)     // in "for" loop, between different conditions to variables, use ; instead of , //            
     {
         scores[i]= get_int("Score: ");
     }
-    printf("Average: %f\n ", average(3, scores));
+    printf("Average: %f\n ", average(TOTAL, scores));     //When calling out scores array, don't need to include []//
 }    
-    float average(int length, int array[])
+    float average(int length, int array[]) // use , here in function //
 {
     int sum =0;
     for (int i=0; i<length; i++)
     {
         sum+= array[i];
     }
-    return sum/(float) length;
+    return sum/(float) length; // float length here to let .0329abc4 happen //
 }
